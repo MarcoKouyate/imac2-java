@@ -1,0 +1,78 @@
+///////////////////////////////////////////////////////
+MARCO KOUYATE
+IMAC 2 - 2019 / 2020
+JAVA - TP 03 - EXERCICE 02
+///////////////////////////////////////////////////////
+
+=======================================================
+       var b1 = new Book("Da Java Code", "Duke Brown");
+       var b2 = b1;
+       var b3 = new Book("Da Java Code", "Duke Brown");
+
+       System.out.println(b1 == b2);
+       System.out.println(b1 == b3);
+      
+Qu'affiche le code ci-dessus ? 
+--------------------------------------------------------
+
+========================================================
+Pourquoi ?
+--------------------------------------------------------
+========================================================
+Écrire dans la classe Book une méthode (à vous de trouver 
+le nom et la signature exacte de la méthode) qui renvoie 
+true si deux livres ont les mêmes nom et description. 
+Attention à la comparaison de chaînes de caractères.
+=========================================================
+La classe java.util.ArrayList correspond à un tableau qui 
+s'agrandit dynamiquement. 
+A quoi sert la méthode indexOf de ArrayList (RTFM) ?
+=========================================================
+Exécutez le code suivant :
+     public static void main(String[] args){
+       var b1 = new Book("Da Java Code", "Duke Brown");
+       var b2 = b1;
+       var b3 = new Book("Da Java Code", "Duke Brown");
+
+       var list = new ArrayList();
+       list.add(b1);
+       System.out.println(list.indexOf(b2));
+       System.out.println(list.indexOf(b3));
+     }
+==========================================================
+Quel est le problème avec les résultats affichés sur la console. 
+Note : ici, le compilateur génère un warning au niveau du add. 
+Nous verrons dans les prochains TD comment l'éviter.
+==========================================================
+Quelle méthode de Book est appelée par ArrayList.indexOf (RTFM again) ?
+==========================================================
+Modifier la classe Book pour que indexOf() fait sur 
+l'ArrayList teste si les deux livres ont les mêmes 
+caractéristiques.
+==========================================================
+Utiliser l'annotation @Override (java.lang.Override) sur la
+méthode ajoutée à Book.
+A quoi sert l'annotation @Override ?
+==========================================================
+Qu'affiche le code ci-dessous ?
+       var aBook = new Book(null, null);
+       var anotherBook = new Book(null, null);
+       var list = new ArrayList();
+       list.add(aBook);
+       System.out.println(list.indexOf(anotherBook));
+==========================================================      
+Où se situe le problème ? 
+==========================================================
+Rappeler pourquoi un code doit arrêter de fonctionner si 
+celui-ci est mal utilisé par un développeur.
+========================================================== 
+Que doit-on faire pour corriger le problème ?
+==========================================================
+Rappeler quelle est la règle de bonne pratique concernant 
+l'utilisation de null.
+==========================================================
+A quoi sert la méthode java.util.Objects.requireNonNull (RTFM) ?
+========================================================== 
+Comment l'utiliser ici pour empêcher de construire un livre 
+avec des champs null ?
+==========================================================
