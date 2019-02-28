@@ -1,0 +1,78 @@
+
+On cherche à écrire une classe Book représentant un livre avec un titre et le nom de l'auteur.
+
+    Déclarer une classe Book contenant les champs privés title et author.
+    Puis essayer le code suivant dans une méthode main de la classe Book.
+
+    	    var book = new Book();
+    	    System.out.println(book.title + ' ' + book.author); 
+          
+    Expliquer.
+            ----------------------------------------------------------------------------
+    		
+            La méthode main a toujours accés aux champs privés de la classe Book puisque 
+            la méthode est elle-meme a l'interieur de la classe
+
+            ===========================================================================
+Créer une classe Main (dans un fichier Main.java) et déplacer le main de la classe Book 
+dans la classe Main. Quel est le problème ? Comment peut-on le corriger ?
+            ----------------------------------------------------------------------------
+
+    		La méthode main ne peut plus avoir accés directement aux champs privés de la 
+            classe Book puisqu'elle se trouve maintenant à l'extérieur de la classe
+    		Pour corriger cette erreur, il faudrait se servir d'une méthode intermédiaire 
+            de la classe Book qui va pouvoir nous renvoyer les champs privés
+            
+            ============================================================================
+Rappeler les 4 visibilités possibles en Java.
+            ----------------------------------------------------------------------------
+
+    		PUBLIC - DEFAULT - PROTECTED - PRIVATE
+
+            ============================================================================
+Pourquoi doit-on toujours déclarer les champs privés sous peine de mort certaine ?
+            ----------------------------------------------------------------------------
+
+    		C'est essentiel pour respecter le principe d'encapsulation, et ainsi, protéger 
+            les champs de toute modifications imprévues par les classes extérieures. Les 
+            attributs sont manipulés que par la classe qui en est responsable, ce qui rend 
+            le programme plus sur.
+
+            ============================================================================ 
+Qu'est ce qu'un accesseur ?
+            ----------------------------------------------------------------------------
+
+    		Un accesseur est une méthode publique qui va transmettre les valeurs d'un 
+            champ privé de sa classe. Les autres classes vont se servir de cet intermédiaire 
+            pour obtenir la valeur de ses champs privées.
+
+            ============================================================================
+Sachant qu'il n'y a aucune raison de changer les champs d'un livre une fois celui-ci créé 
+(au moins pour l'instant), quels sont les accesseurs que l'on doit mettre ici ?
+            ----------------------------------------------------------------------------
+
+					    	public String getTitle()
+					      		{
+					        		return title;
+					      		} 
+
+					      	public String getAuthor()
+					      		{
+					        		return author;
+					      		}  
+
+			=============================================================================
+Comment indiquer à un futur développeur que la valeur du champ title (ou author) ne doit 
+pas être modifiée ? 
+            -----------------------------------------------------------------------------
+    		
+            On passe la variable en final pour en faire une variable constante, que nous 
+            nommons en majuscule. Puisqu'il n'est pas possible pour une constante de differer
+            entre les differentes instances d'une meme classe, nous pouvons aussi la passer
+            en static, et ainsi eviter d'allouer de la memoire supplementaire pour chaque
+            objet creer. Enfin, nous pouvons aussi préciser en commentaire que la 
+            variable ne doit pas etre modifiee.  
+
+            =============================================================================
+Pourquoi est-ce important ?*/
+            ---------
