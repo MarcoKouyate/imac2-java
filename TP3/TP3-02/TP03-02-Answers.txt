@@ -27,7 +27,8 @@ Pourquoi ?
   Ils sont donc egaux au sens de == puisqu'un objet est 
   identique à lui-meme. 
   b3 est un autre objet créé dans la mémoire, et n'est donc
-  pas egal à b1 au sens de ==
+  pas egal à b1 au sens de == car meme si ils ont des valeurs 
+  identiques il ne s'agit pas du même objet
 
 ========================================================
 Écrire dans la classe Book une méthode (à vous de trouver 
@@ -83,9 +84,9 @@ Note : ici, le compilateur génère un warning au niveau du add.
 Nous verrons dans les prochains TD comment l'éviter.
 ----------------------------------------------------------
 
-  La console affiche l'index 0 aussi bien pour le b2 que pour le b3
-  Alors que seul b1 est ajoute dans la liste. A priori, seul b2 serait
-  present dans la liste puisqu'il pointe le meme objet que b1
+  La console affiche l'index 0 aussi bien pour le b2 que pour le b3.
+  Cela voudrait dire que b3 n'a pas été ajouté dans la liste comme il
+  le faudrait parce qu'il existerait déjà. Cela évite les duplications. 
 
 ==========================================================
 Quelle méthode de Book est appelée par ArrayList.indexOf (RTFM again) ?
@@ -97,10 +98,16 @@ Quelle méthode de Book est appelée par ArrayList.indexOf (RTFM again) ?
 Modifier la classe Book pour que indexOf() fait sur 
 l'ArrayList teste si les deux livres ont les mêmes 
 caractéristiques.
-==========================================================
+
 Utiliser l'annotation @Override (java.lang.Override) sur la
 méthode ajoutée à Book.
 A quoi sert l'annotation @Override ?
+----------------------------------------------------------
+
+  Cette notation sert à s'assurer que la méthode associée 
+  ne puisse fonctionner que si elle redéfinit une méthode
+  déjà existente (par exemple une méthode héritée d'un parent)
+
 ==========================================================
 Qu'affiche le code ci-dessous ?
        var aBook = new Book(null, null);
@@ -108,19 +115,67 @@ Qu'affiche le code ci-dessous ?
        var list = new ArrayList();
        list.add(aBook);
        System.out.println(list.indexOf(anotherBook));
-==========================================================      
+----------------------------------------------------------
+
+  Le code affiche un NullPointer Exception
+
+==========================================================    
 Où se situe le problème ? 
+----------------------------------------------------------
+  
+    Le code affiche un NullPointer Exception au niveau de 
+    java.util.ArrayList.indexOf car celui-ci utilise, comme
+    vu plus haut, la methode equals(). 
+    Cette méthode ne sait pas comparer un champ string avec
+    un champ null, ce qui explique la levée d'exception.
+
 ==========================================================
 Rappeler pourquoi un code doit arrêter de fonctionner si 
 celui-ci est mal utilisé par un développeur.
+---------------------------------------------------------
+    
+    Un programme mal utilisé par un développeur, mais qui 
+    fonctionne tout de même sur le moment, peut engendrer
+    de sévères problèmes de performances, des effets 
+    inattendus ou bien des erreurs beaucoup plus difficiles
+    à repérer. Il est donc important de pousser le développeur
+    à être rigoureux dés la phase de compilation pour ne pas
+    provoquer de soucis pour les autres développeurs ou les
+    clients. 
+
 ========================================================== 
 Que doit-on faire pour corriger le problème ?
+----------------------------------------------------------
+
+    Une solution serait soit de lever une exception à la création
+    d'objets avec des champs null. Eventuellement de prevoir
+    un morceau de code qui convertisse les champs null par des
+    valeurs par défaut. 
+
 ==========================================================
 Rappeler quelle est la règle de bonne pratique concernant 
 l'utilisation de null.
+---------------------------------------------------------
+
+  Il est plus simple de ne pas permettre d'insérer null
+  plutôt que de tester si la valeur est null à chaque fois
+
 ==========================================================
 A quoi sert la méthode java.util.Objects.requireNonNull (RTFM) ?
+----------------------------------------------------------
+
+  Cette méthode vérifie si la référence indiquée n'est pas null
+  et affiche un NullPointerException personnalisé si c'est le cas.
+  Cela empêche le développeur de laisser d'utiliser des references
+  d'objet null lorsqu'il ne le faudrait pas. 
+
 ========================================================== 
 Comment l'utiliser ici pour empêcher de construire un livre 
 avec des champs null ?
+----------------------------------------------------------
+
+  Nous pourrions par exemple vérifier les arguments passés à l'intérieur
+  du constructeur d'un Book pour s'assurer que les variables ne
+  sont pas null
+
 ==========================================================

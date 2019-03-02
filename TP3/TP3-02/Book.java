@@ -1,11 +1,14 @@
 
+
+import java.util.Objects;
+
 public class Book {
         private String title = "<no title>";
         private String author = "<no author>";
 
 	      public Book(String title, String author){
-	         	this.title = title;
-	        	this.author = author;
+            this.title = Objects.requireNonNull(title, "titles can't be null");
+            this.author = Objects.requireNonNull(author, "authors can't be null");
 	        }
 			
 			  public Book(String title){
