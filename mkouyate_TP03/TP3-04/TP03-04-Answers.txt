@@ -1,0 +1,65 @@
+///////////////////////////////////////////////////////
+MARCO KOUYATE
+IMAC 2 - 2019 / 2020
+JAVA - TP 03 - EXERCICE 04
+///////////////////////////////////////////////////////
+
+=======================================================
+Écrire une méthode swap qui échange les valeurs de deux 
+cases d'un tableau.
+ 
+ void swap(int[] array,int index1,int index2)
+--------------------------------------------------------
+
+  
+  public static void swap(int[] arr, int index1,int index2) {
+    int temp = arr[index1];
+    arr[index1] = arr[index2];
+    arr[index2] = temp;
+  }
+
+========================================================
+Écrire une méthode indexOfMin qui renvoie l'indice de la 
+valeur minimale d'un tableau.
+--------------------------------------------------------
+
+  public static int indexOfMin(int[] arr){
+    int minInt = arr[0];
+    int minIndex = 0;
+
+    for (int i = 0; i < arr.length ; i++){
+      if (arr[i] < arr[minIndex]) { minIndex = i; }
+    }
+    return minIndex;
+  }
+
+========================================================
+Modifier la méthode indexOfMin en ajoutant deux indices 
+indiquant que l'on cherche l'indice du minimum non pas 
+sur tout le tableau mais sur la partie de tableau entre 
+ces deux indices (le premier inclus, le deuxième exclu).
+-------------------------------------------------------
+
+    public static int indexOfMin(int[] arr, int begin, int end){
+    int minInt = arr[begin];
+    int minIndex = begin;
+
+    for (int i = begin; i < arr.length && i < end; i++){
+      if (arr[i] < arr[minIndex]) { minIndex = i; }
+    }
+    return minIndex;
+  }
+
+=======================================================
+Écrire la méthode sort qui prend un tableau d'entier en 
+paramètre et qui trie celui-ci en utilisant pour cela 
+les méthodes indexOfMin et swap.
+-------------------------------------------------------
+
+    public static void sort (int[] arr){
+      for (int i = 0 ; i < arr.length ; i++){
+       swap(arr, i, indexOfMin(arr, i,arr.length));
+     }
+    } 
+
+=======================================================

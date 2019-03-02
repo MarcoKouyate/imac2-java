@@ -1,0 +1,42 @@
+///////////////////////////////////////////////////////
+MARCO KOUYATE
+IMAC 2 - 2019 / 2020
+JAVA - TP 03 - EXERCICE 03
+///////////////////////////////////////////////////////
+
+=======================================================
+On aimerait pouvoir afficher les caractéristiques d'un livre, par le code Java suivant :
+      var book = new Book("Da Java Code", "Dan Duke");
+      System.out.println(book);
+    
+Java sait faire cela, à condition de mettre dans la classe Book une méthode public String toString() (la définition de cette méthode est dans la classe java.lang.Object (RTFM !)) retournant une chaîne de caractères, qu'on construit typiquement à partir des attributs de l'objet. 
+Rappel: en Java on peut faire un '+' entre une String et n'importe quoi, le résultat est la concaténation entre la String et le n'importe quoi vu comme une chaîne de caractère.
+
+Écrire cette méthode, pour obtenir par exemple l'affichage suivant :
+      Da Java Code by Dan Duke 
+--------------------------------------------------------
+        
+         @Override public String toString(){
+          return title + ", by " + author;
+        }
+
+========================================================      
+Peut-on utiliser l'annotation @Override, ici ?
+---------------------------------------------------------
+
+  Oui nous pouvons puisque nous redéfinissons une méthode
+  déjà existente dans object
+
+========================================================
+Plus difficile, on souhaite maintenant afficher uniquement le titre du livre si le livre est construit avec le constructeur avec un seul argument. Attention, l'affichage de new Book("", "<no author>") devra bien afficher "<no author>". 
+Si vous entrevoyez une solution qui utilise null, pensez plus fort :)
+----------------------------------------------------------
+
+  J'utilise un boolean pour savoir quel constructeur
+  l'objet a-t'il utilisé puis je modifie la méthode toString()
+
+        @Override public String toString(){
+          return title + ( hasAuthor ? (", by " + author ):"");
+        }
+
+==========================================================
