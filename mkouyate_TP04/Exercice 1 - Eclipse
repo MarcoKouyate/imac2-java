@@ -1,0 +1,20 @@
+Exercice 1 - Eclipse
+À partir de maintenant, nous allons utiliser Eclipse (lancer la commande eclipse dans un terminal) comme environnement pour faire les TPs.
+Créer un projet nommé TP4.
+Modifier les propriétés du projet TP4 pour que les classes (fichiers .java) soit générées dans le répertoire sources.
+Faire de même pour tous les futurs projets qui seront créés (Aller voir dans le menu Window > Preferences).
+Vérifier que l'environnement d'exécution est bien Java-11, changer si ce n'est pas le cas.
+Vérifier que l'environnement de compilation est bien 11, changer si ce n'est pas le cas.
+Écrire une classe Main qui affiche Hello Eclipse.
+A faire à la maison pour le compte rendu:
+Que fait sysout + Ctrl + Space dans un main ?
+Que fait toStr + Ctrl + Space dans une classe ?
+Définir un champs foo de type int, que fait get + Ctrl + Space, et set + Ctrl + Space .
+Dans le menu Source, comment générer un constructeur initialisant le champ foo ?
+Sélectionner le nom de la classe puis Alt + Shift + R, qu'obtient-on ? Même question avec le champ foo .
+Écrire a = 2 + 3 + 4, puis sélectionner 2 + 3 puis Alt + Shift + L .
+Écrire new Integer(2), en gardant le curseur après ')', appuyer sur Ctrl + 1, que se passe-t-il ?
+Déclarer une variable s de type String et cliquer sur String en maintenant la touche Ctrl . Que se passe-t-il ?
+Dans la méthode toString(), que fait un Ctrl + Clic sur super.toString() ?
+Sélectionner le champs foo, puis Ctrl + Shift + G. Que se passe-t-il ?
+À quoi sert Ctrl + Shift + O ?
