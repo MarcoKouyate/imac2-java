@@ -1,0 +1,41 @@
+///////////////////////////////////////////////////////
+MARCO KOUYATE
+IMAC 2 - 2019 / 2020
+JAVA - TP 05 - EXERCICE 01
+///////////////////////////////////////////////////////
+
+
+On souhaite dans un premier temps modéliser des combats de robots. 
+Un robot possède un nom et un nombre de points de vie compris entre 10 
+(parfaitement en vie) et 0 (totalement mort). Tous les robots commencent 
+avec 10 points de vie à leur création et perdent des points de vie lors 
+de combats.
+
+Écrire une classe Robot dans le package fr.umlv.fight avec un constructeur 
+prenant le nom du robot et de telle sorte que le code suivant affiche 
+"Robot" suivi du nom du robot.
+     var bob = new Robot("bob");
+     System.out.println(bob);  // affiche "Robot bob"
+    
+======================================================================
+Ajouter une méthode fire qui prend en paramètre un robot et 
+qui permet au robot courant de tirer sur le robot pris en paramètre. 
+Les robots étant parfaits, ils atteignent toujours leur cible, donc 
+un robot qui se fait tirer dessus va toujours perdre 2 points de vie. 
+======================================================================
+Ajouter, de plus, une méthode isDead qui permet de savoir si un 
+robot est mort.
+======================================================================
+Écrire dans une nouvelle classe fr.umlv.fight.Arena une méthode fight 
+qui simule le combat entre deux robots. Un combat se déroule de la 
+façon suivante, le premier robot tire sur le second, si le second n'est 
+pas mort, celui-ci réplique et ce jusqu'à la mort d'un des robots. 
+Le robot restant en vie est déclaré vainqueur et renvoyé en valeur de 
+retour de la méthode fight. 
+======================================================================
+Pour suivre le déroulement du combat, modifier la méthode fire pour 
+qu'à la fin de celle-ci, soit affiché le message:
+     "Robot foo a été touché par le Robot bar !"
+======================================================================
+Écrire le code de la méthode fight ainsi qu'un main de test d'un 
+combat entre D2R2 et Data.
