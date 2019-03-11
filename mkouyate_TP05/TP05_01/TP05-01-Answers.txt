@@ -39,3 +39,4 @@ qu'à la fin de celle-ci, soit affiché le message:
 ======================================================================
 Écrire le code de la méthode fight ainsi qu'un main de test d'un 
 combat entre D2R2 et Data.
+======================================================================
