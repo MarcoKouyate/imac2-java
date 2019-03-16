@@ -12,8 +12,18 @@ public class Robot {
   }
 
   public void fire(Robot enemy) {
-  	enemy.hit();
-  	 System.out.println("Robot " + enemy.getName() + " a été touché par " + name +" !");
+    if (enemy.isDead()) throw new NullPointerException( name + " can't hit a dead robot");
+
+    if (rollTheDice()) {
+      enemy.hit();
+      System.out.println("Robot " + enemy.getName() + " a été touché par " + name +" !");     
+    } else {
+    System.out.println(name + " a manqué " + enemy.getName() + " !");     
+    }
+  }
+
+  protected boolean rollTheDice() {
+    return true;
   }
 
   public void hit(){

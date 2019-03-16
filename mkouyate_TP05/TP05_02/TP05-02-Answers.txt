@@ -19,47 +19,86 @@ de vie mais qui, lorsqu'ils tirent, ratent une fois sur deux.
 Pour modéliser le fait qu'un humain rate un tir sur deux, on 
 va utiliser la classe java.util.Random qui implante un générateur 
 pseudo aléatoire et sa méthode nextBoolean. 
-==========================================================
+
 Pour que tous les humains semblent avoir des comportements différents, 
 à la création d'un Fighter en plus du nom, on indiquera un nombre qui 
 va servir de graine (seed) au générateur pseudo-aléatoire.
+
+
+
+
+
+
+
 ==========================================================
 Expliquer comment marche un générateur pseudo aléatoire et qu'est 
 ce que la graine d'un générateur pseudo aléatoire ?
 ----------------------------------------------------------
 
-
+Un générateur pseudo aléatoire génére une séquence de nombres 
+suffisament indépendants les uns des autres pour être considérés 
+comme étant quasiment aléatoire. On se sert ensuite d'un index appelé graine 
+(seed) pour déterminer quelle partie de cette séquence sera lue par la machine.
+La machine utilise parfois certaines caractéristiques de la machine comme 
+la température, 
+le nombre de clics ou l'heure.  
 
 ==========================================================
 Écrire la classe Fighter de telle sorte que:
 La classe Fighter hérite de la classe Robot
 Que la méthode d'affichage affiche "Fighter" suivi du nom du combattant.
-==========================================================
 Que lorsqu'un humain fait feu avec la méthode fire, il ait une chance 
 sur deux de rater sa cible.
 Note: on suppose ici qu'il n'est pas interdit d'avoir des champs avec 
-une visibilité autre que private ou de package et qu'un peu de copier-coller ne va pas ruiner votre carrière naissante.
+une visibilité autre que private ou de package et qu'un peu de copier-coller 
+ne va pas ruiner votre carrière naissante.
+---------------DONE
+
 ==========================================================
-Expliquer pourquoi il ne faut jamais qu'un champ soit déclaré avec une visibilité autre que private ou de package. 
+Expliquer pourquoi il ne faut jamais qu'un champ soit déclaré avec une 
+visibilité autre que private ou de package. 
 ----------------------------------------------------------
 
+Cela respecte le principe d'encapsulation. Seule la classe qui 
+contient le champ devrait avoir la responsabilité de modifier celui-ci. 
+Ce principe permet d'éviter des effets de bord indésirables et 
+protège les chauds. 
 
 ==========================================================
 Modifier le code en conséquence.
+---------------DONE
+
 ==========================================================
 Il y a un bug dans l'implantation de la classe Robot, il est possible 
-qu'un robot tire sur un robot mort ce qui est strictement interdit par le code de déontologie de l'association sportive de tir de robot.
+qu'un robot tire sur un robot mort ce qui est strictement interdit par 
+le code de déontologie de l'association sportive de tir de robot.
 
 Faire en sorte que, si un robot tente de tirer sur un robot mort, 
 une exception soit levée (on vous laisse deviner laquelle :)
+---------------DONE
 ========================================================== 
 On peut remarquer que la méthode fire de la classe Fighter a le même problème. 
 Que pouvez vous en conclure sur le copier-coller ?
+---------------------------------------------------------
+
+Le copier-coller n'est pas terrible puisqu'il pousse à se répéter
+
 ========================================================== 
-Pour éviter le copier-coller de code, l'idée est d'introduire une méthode rollDice dans Robot qui modélise le fait qu'un robot a une chance sur un d'atteindre sa cible tandis qu'un combattant a une chance sur deux.
+Pour éviter le copier-coller de code, l'idée est d'introduire une méthode 
+rollDice dans Robot qui modélise le fait qu'un robot a une chance sur un 
+d'atteindre sa cible tandis qu'un combattant a une chance sur deux.
+---------------DONE
 ==========================================================  
-Dans ce cas, la méthode fire peut être écrite une seule fois dans Robot car la méthode rollDice aura un code différent pour Robot et Fighter. 
-Modifier le code pour introduire la méthode rollDice. Quelle doit être la visibilité de cette méthode ?
+Dans ce cas, la méthode fire peut être écrite une seule fois dans Robot car 
+la méthode rollDice aura un code différent pour Robot et Fighter. 
+Modifier le code pour introduire la méthode rollDice. Quelle doit être la 
+visibilité de cette méthode ?
+---------------------------------------------------------
+
+Cette méthode ne doit pas être public puisqu'elle est utilisée par la classe
+elle-même. Mais pour qu'elle soit accessible par ses classes-filles
+nous utiliserons protected à la place de private
+
 ========================================================== 
 Vérifier que l'on peut bien faire un combat d'humain avec le code suivant
      var john = new Fighter("John", 1);
@@ -69,6 +108,9 @@ Vérifier que l'on peut bien faire un combat d'humain avec le code suivant
 Si cela n'a pas déjà été fait, faîtes en sorte que pour un Fighter, 
 l'affichage soit "Fighter" suivi de son nom. 
 Note: de même le champs name doit rester private !
+---------------DONE
 ========================================================== 
 En conclusion, rappeler ce qu'est le sous-typage et ce qu'est le 
 polymorphisme en utilisant comme exemple les codes que vous venez d'écrire.
+-------------------------------------------------------------------------
+=========================================================
