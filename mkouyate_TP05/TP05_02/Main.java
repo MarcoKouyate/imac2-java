@@ -7,10 +7,10 @@ public class Main {
    	 var data = new Robot("data");
    	 var arena = new Arena();
 
-   	 var bob = new Fighter("Bob");
+   	 var djayd = new Fighter("Djayd");
+   	 var cod = new Fighter("Cod");
 
-     System.out.println(arena.fight(d2r2,data) + " a remporté le combat");  // affiche "Robot bob"
-     System.out.println(bob);
+     System.out.println(arena.fight(cod,djayd) + " a remporté le combat");  // affiche "Robot bob"
 
      }
 }
