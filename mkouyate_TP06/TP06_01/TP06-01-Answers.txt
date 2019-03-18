@@ -5,16 +5,37 @@ JAVA - TP 06 - EXERCICE 01
 https://igm.univ-mlv.fr/ens/IR/IMAC2/2018-2019/Java/td06.php
 ///////////////////////////////////////////////////////
 
-
+=====================================================================
 Pour tout l'exercice, pour vos tests, vous écrirez votre code une la classe Main dans le package fr.umlv.geom.main. 
 Le code de la classe fr.umlv.geom.Point ne compile pas. 
 Expliquer pourquoi ? 
+---------------------------------------------------------------------
+Le code ne compile pas parce quil est impossible de modifier une variable
+constante. Or nous essayons de modifier les variables x et y dans la methode translate alors quelles sont declarees comme etant finales. 
+=====================================================================
+
+=====================================================================
 Discuter des choix d'implantation et de leurs influences sur la signature de la méthode translate.
+---------------------------------------------------------------------
+ //
+=====================================================================
+
+=====================================================================
 Pour la suite de l'exercice, on choisira la version mutable de la classe fr.umlv.geom.Point. 
 Écrire une classe fr.umlv.geom.Circle, un cercle étant défini par un Point correspondant au centre et un rayon de type int. Que doit-on préciser en déclarant ces deux champs?
-Écrire le constructeur du Circle.
-Écrire la méthode toString() qui affiche le centre et le rayon.
+-------------------------------------------------------------------
+Les deux champs doivent être private.
+=====================================================================
+
+====================================================================
+Écrire le constructeur du Circle. ---- DONE
+=====================================================================
+====================================================================
+Écrire la méthode toString() qui affiche le centre et le rayon. ---- DONE
+=====================================================================
+====================================================================
 Écrire la méthode translate(int dx, int dy) qui translate le cercle.
+====================================================================
 Qu'affiche le code suivant sur la console :
        var point = new Point(1, 2);
        var circle = new Circle(point, 1);
@@ -23,24 +44,34 @@ Qu'affiche le code suivant sur la console :
        circle2.translate(1, 1);
 
        System.out.println(circle + " " + circle2);
-      
-
+-------------------------------------------------------------------
+===================================================================
 Que doit-on faire pour que cela n'arrive pas ?
+-------------------------------------------------------------------
+===================================================================
 Quel est le problème avec l'accesseur getCenter() codé de la façon suivante :
      public Point getCenter() {
        return center;
      }
-    
 
 Pour vous aider, regardez le code suivant :
     var point = new Point(1, 2);
     var circle = new Circle(p, 1);
     c.getCenter().translate(1,1);
     System.out.println(p);
-   
+-------------------------------------------------------------------
+===================================================================
 Que doit-on faire pour que le code soit correct ?
+-------------------------------------------------------------------
+===================================================================
 Écrire la méthode surface() qui renvoie la surface du disque. 
+===================================================================
 Modifier la méthode toString() pour quelle affiche aussi la surface.
+===================================================================
 Écrire la méthode contains(Point p) qui renvoie vrai si un point est contenu dans un disque.
-Écrire la méthode contains(Point p, Circle... circles) qui renvoie vrai si un point est contenu dans un des disques. 
+===================================================================
+Écrire la méthode contains(Point p, Circle... circles) qui renvoie vrai si un point est contenu dans un des disques.
+=================================================================== 
 Que veut dire "..." dans la signature de la méthode ?
+-------------------------------------------------------------------
+===================================================================
