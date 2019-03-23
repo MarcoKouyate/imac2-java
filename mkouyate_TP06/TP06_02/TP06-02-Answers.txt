@@ -1,0 +1,45 @@
+///////////////////////////////////////////////////////
+MARCO KOUYATE
+IMAC 2 - 2019 / 2020
+JAVA - TP 06 - EXERCICE 02
+https://igm.univ-mlv.fr/ens/IR/IMAC2/2018-2019/Java/td06.php
+///////////////////////////////////////////////////////
+
+======================================================
+Le but de cet exercice est de construire un anneau 
+comme étant un cercle dont on a évidé une zone 
+circulaire définie par son rayon interne.
+
+Pour tout l'exercice, pour vos tests, réutilisez la 
+classe Main vue précédemment.
+Rappeler dans un premier temps, dans quel cas il 
+est judicieux de faire de l'héritage.
+------------------------------------------------------
+L'héritage est judicieux lorsque nous souhaitons donner
+un comportement plus specifique à une classe qui existe
+deja. Dans notre cas, nous souhaitons deriver le Cercle
+en Ring.
+======================================================
+
+
+======================================================
+Écrire la classe Ring qui hérite de la classe Circle.
+---- DONE
+======================================================
+
+Écrire un constructeur de la classe Ring prenant en paramètre, un centre, un rayon et un rayon interne. Faites attention à ce que le rayon interne soit inférieur au rayon de l'anneau. 
+Que faire dans le cas contraire? 
+Note: Tous les champs doivent être privés.
+On souhaite maintenant qu'un anneau soit affiché comme un cercle, avec en plus au bout de la ligne "InternalRadius: ir" où ir est le rayon interne de l'anneau".
+Modifiez ce qu'il faut pour que cela fonctionne. Essayez avec le code suivant (est ce que tout vous semble correct? Dans le cas contraire, que doit-on faire pour corriger?):
+    var point = new Point(1, 2);
+    var circle = new Circle(point, 2);
+    System.out.println(circle);
+    var ring = new Ring(point, 2, 1);
+    System.out.println(ring);
+
+Ensuite...
+Implantez une méthode contains(Point) en évitant d'allouer des objets ou de dupliquer du code. 
+PS: il existe deux solutions dont une plus élégante que l'autre.
+Écrire la méthode contains(Point p, Ring... rings) qui renvoie vrai si un point est contenu dans l'un des anneaux.
+Que peut-on conclure de ce TP?
