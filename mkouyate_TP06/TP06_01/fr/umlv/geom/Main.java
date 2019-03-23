@@ -1,10 +1,11 @@
 
 public class Main {
      public static void main(String[] args){
-    	Point pt = new Point(3,8);
-    	Circle circle = new Circle(pt, 2);
-
-    	System.out.println(circle);
+	    var p = new Point(1, 2);
+	    var c = new Circle(p, 1);
+	    c.getCenter().translate(1,1);
+	    System.out.println(c);
+	    System.out.println(c.contains(p));
      }
 }
 

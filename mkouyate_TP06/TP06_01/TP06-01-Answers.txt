@@ -6,35 +6,48 @@ https://igm.univ-mlv.fr/ens/IR/IMAC2/2018-2019/Java/td06.php
 ///////////////////////////////////////////////////////
 
 =====================================================================
-Pour tout l'exercice, pour vos tests, vous écrirez votre code une la classe Main dans le package fr.umlv.geom.main. 
-Le code de la classe fr.umlv.geom.Point ne compile pas. 
+Pour tout l'exercice, pour vos tests, vous écrirez votre code une la 
+classe Main dans le package fr.umlv.geom.main. Le code de la classe 
+fr.umlv.geom.Point ne compile pas. 
 Expliquer pourquoi ? 
 ---------------------------------------------------------------------
-Le code ne compile pas parce quil est impossible de modifier une variable
-constante. Or nous essayons de modifier les variables x et y dans la methode translate alors quelles sont declarees comme etant finales. 
+Le code ne compile pas parce qu'il est impossible de modifier une variable
+constante. Or nous essayons de modifier les variables x et y dans la methode 
+translate alors quelles sont declarées comme etant finales. 
 =====================================================================
 
 =====================================================================
-Discuter des choix d'implantation et de leurs influences sur la signature de la méthode translate.
+Discuter des choix d'implantation et de leurs influences sur la 
+signature de la méthode translate.
 ---------------------------------------------------------------------
  //
 =====================================================================
 
 =====================================================================
-Pour la suite de l'exercice, on choisira la version mutable de la classe fr.umlv.geom.Point. 
-Écrire une classe fr.umlv.geom.Circle, un cercle étant défini par un Point correspondant au centre et un rayon de type int. Que doit-on préciser en déclarant ces deux champs?
+Pour la suite de l'exercice, on choisira la version mutable de la 
+classe fr.umlv.geom.Point. 
+Écrire une classe fr.umlv.geom.Circle, un cercle étant défini par un 
+Point correspondant au centre et un rayon de type int. Que doit-on 
+préciser en déclarant ces deux champs?
 -------------------------------------------------------------------
 Les deux champs doivent être private.
 =====================================================================
 
 ====================================================================
-Écrire le constructeur du Circle. ---- DONE
+Écrire le constructeur du Circle. 
+---- DONE
 =====================================================================
+
 ====================================================================
-Écrire la méthode toString() qui affiche le centre et le rayon. ---- DONE
+Écrire la méthode toString() qui affiche le centre et le rayon. 
+---- DONE
 =====================================================================
+
 ====================================================================
 Écrire la méthode translate(int dx, int dy) qui translate le cercle.
+---- DONE
+====================================================================
+
 ====================================================================
 Qu'affiche le code suivant sur la console :
        var point = new Point(1, 2);
@@ -45,9 +58,25 @@ Qu'affiche le code suivant sur la console :
 
        System.out.println(circle + " " + circle2);
 -------------------------------------------------------------------
+"Cercle de centre (2,3) et de rayon 1 Cercle de centre (2,3) et 
+de rayon 2"
+
+Les deux cercles sont à la même position alors que seul l'un des
+deux cercles aurait du translaté.
+===================================================================
+
+
 ===================================================================
 Que doit-on faire pour que cela n'arrive pas ?
 -------------------------------------------------------------------
+Cela est du au fait que nous utilisons la même instance de Point
+en tant que centre des deux cercles. Si celui-ci est translaté, il
+l'est aussi pour tous les autres cercles. 
+Idéalement, il faudrait une nouvelle instance de point pour chaque 
+Cercle ou bien étendre Cercle depuis Point. 
+===================================================================
+
+
 ===================================================================
 Quel est le problème avec l'accesseur getCenter() codé de la façon suivante :
      public Point getCenter() {
@@ -60,18 +89,52 @@ Pour vous aider, regardez le code suivant :
     c.getCenter().translate(1,1);
     System.out.println(p);
 -------------------------------------------------------------------
+L'accesseur codé de cette façon renvoie une référence sur l'objet
+centre. Cela veut dire qu'il est possible de récupérer le centre
+et d'en modifier les valeurs à l'extérieur de la classe, ce qui ne
+respecte pas correctement le principe d'encapsulation. 
+===================================================================
+
+
 ===================================================================
 Que doit-on faire pour que le code soit correct ?
 -------------------------------------------------------------------
+Nous retournons une copie du centre plutot que le centre lui-même !
+
+return new Point(center.getX(), center.getY());
+===================================================================
+
+
 ===================================================================
 Écrire la méthode surface() qui renvoie la surface du disque. 
+----DONE
+===================================================================
+
+
 ===================================================================
 Modifier la méthode toString() pour quelle affiche aussi la surface.
+----DONE
 ===================================================================
-Écrire la méthode contains(Point p) qui renvoie vrai si un point est contenu dans un disque.
+
+
 ===================================================================
-Écrire la méthode contains(Point p, Circle... circles) qui renvoie vrai si un point est contenu dans un des disques.
-=================================================================== 
+Écrire la méthode contains(Point p) qui renvoie vrai si un point est
+contenu dans un disque.
+----DONE
+===================================================================
+
+
+===================================================================
+Écrire la méthode contains(Point p, Circle... circles) qui renvoie 
+vrai si un point est contenu dans un des disques.
+----DONE
+===================================================================
+
+
+===================================================================
 Que veut dire "..." dans la signature de la méthode ?
 -------------------------------------------------------------------
+Cela veut dire que nous pouvons ajouter autant de cercles que nous
+le souhaitons en arguments de la fonction. Le corps de la fonction
+récupère les cercles sous la forme d'un tableau de cercles
 ===================================================================
