@@ -13,7 +13,7 @@ public class Circle {
 	}
 
     @Override public String toString(){
-     	return "[Cercle de centre " + center + ", de rayon " + rayon + " et de surface " + df.format(surface()) + " m²]";
+     	return "Cercle de centre " + center + ", de rayon " + rayon + " et de surface " + df.format(surface()) + " m²";
     }
 
   public void translate(int dx, int dy) {

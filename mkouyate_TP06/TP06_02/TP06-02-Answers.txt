@@ -27,19 +27,60 @@ en Ring.
 ---- DONE
 ======================================================
 
-Écrire un constructeur de la classe Ring prenant en paramètre, un centre, un rayon et un rayon interne. Faites attention à ce que le rayon interne soit inférieur au rayon de l'anneau. 
-Que faire dans le cas contraire? 
+
+======================================================
+Écrire un constructeur de la classe Ring prenant en 
+paramètre, un centre, un rayon et un rayon interne. 
 Note: Tous les champs doivent être privés.
-On souhaite maintenant qu'un anneau soit affiché comme un cercle, avec en plus au bout de la ligne "InternalRadius: ir" où ir est le rayon interne de l'anneau".
-Modifiez ce qu'il faut pour que cela fonctionne. Essayez avec le code suivant (est ce que tout vous semble correct? Dans le cas contraire, que doit-on faire pour corriger?):
+---- DONE
+======================================================
+
+
+======================================================
+Faites attention à ce que le rayon interne soit 
+inférieur au rayon de l'anneau. 
+Que faire dans le cas contraire? 
+------------------------------------------------------
+Dans le cas contraire, nous levons une exception à 
+l'éxécution signalant que le rayon interne ne peut pas
+être plus grand que le cercle externe.  
+======================================================
+
+
+======================================================
+On souhaite maintenant qu'un anneau soit affiché comme 
+un cercle, avec en plus au bout de la ligne 
+"InternalRadius: ir" où ir est le rayon interne de 
+l'anneau".
+---- DONE
+======================================================
+
+
+======================================================
+Modifiez ce qu'il faut pour que cela fonctionne. 
+Essayez avec le code suivant (est ce que tout vous 
+semble correct? Dans le cas contraire, que doit-on 
+faire pour corriger?):
     var point = new Point(1, 2);
     var circle = new Circle(point, 2);
     System.out.println(circle);
     var ring = new Ring(point, 2, 1);
     System.out.println(ring);
+------------------------------------------------------
+======================================================
 
-Ensuite...
-Implantez une méthode contains(Point) en évitant d'allouer des objets ou de dupliquer du code. 
-PS: il existe deux solutions dont une plus élégante que l'autre.
-Écrire la méthode contains(Point p, Ring... rings) qui renvoie vrai si un point est contenu dans l'un des anneaux.
-Que peut-on conclure de ce TP?
+
+======================================================
+Implantez une méthode contains(Point) en évitant 
+d'allouer des objets ou de dupliquer du code. 
+PS: il existe deux solutions dont une plus élégante que
+l'autre.
+---- DONE
+======================================================
+
+
+======================================================
+Écrire la méthode contains(Point p, Ring... rings) qui 
+renvoie vrai si un point est contenu dans l'un des anneaux.
+---- DONE
+======================================================
