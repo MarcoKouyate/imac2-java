@@ -1,6 +1,6 @@
-**MARCO KOUYATE
-IMAC 2 - 2019 / 2020
-https://igm.univ-mlv.fr/ens/IR/IMAC2/2018-2019/Java/td07.php**
+__ MARCO KOUYATE  
+IMAC 2 - 2019 / 2020  
+https://igm.univ-mlv.fr/ens/IR/IMAC2/2018-2019/Java/td07.php __
 
 
 # JAVA - TP 07 
@@ -19,26 +19,21 @@ des valeurs soit des opérations (avec un membre gauche et un membre droit).
 
 
 ### Pourquoi le constructeur qui prend 4 arguments est déclaré private ?
-
+Nous ne souhaitons pas que l'utilisateur puisse y avoir accès directement. Nous préférons le faire passer par un constructeur public qui va définir les éléments de bases dont nous avons besoin en fonction de si il s'agit d'une valeur ou d'un opérateur. 
 
 
 ### Quel est le problème du constructeur OpOrValue(int, OpOrValue, OpOrValue) ?
+Il faut s'assurer que les paramètres indiquées rentrent bien dans l'ensemble défini pour construire notre objet. Dans le cas contraire, il faudrait lever une exception.
 
-### Corriger le problème.
+#### Corriger le problème.
 
-Écrire une méthode parse qui prend un Scanner en entrée et crée l'arbre 
-d'expression correspondant sachant que l'arbre sera donné au scanner 
-en utilisant la notation polonaise inverse. 
-Par exemple, au lieu de 2 + 3 - 4, la notation 
-polonaise inverse est - + 2 3 4. 
-Indication: la méthode parse est naturellement récursive: si 
-l’expression contient encore des symboles (et qu'elle est bien formée) 
+### Écrire une méthode parse qui prend un Scanner en entrée et crée l'arbre d'expression correspondant sachant que l'arbre sera donné au scanner en utilisant la notation polonaise inverse. 
+__ Par exemple, au lieu de 2 + 3 - 4, la notation polonaise inverse est - + 2 3 4. 
+
+Indication: la méthode parse est naturellement récursive: si l’expression contient encore des symboles (et qu'elle est bien formée) 
 alors:
-soit le prochain symbole est un entier et il suffit d'en faire une 
-feuille de l’arbre d'expression, soit le prochain symbole est un 
-opérateur et il faut appeler parse() 2 fois pour obtenir le fils 
-gauche et le fils droit et les combiner avec l'opérateur pour 
-faire une nouvelle expression.
+- soit le prochain symbole est un entier et il suffit d'en faire une feuille de l’arbre d'expression 
+- soit le prochain symbole est un opérateur et il faut appeler parse() 2 fois pour obtenir le fils gauche et le fils droit et les combiner avec l'opérateur pour faire une nouvelle expression.__ d
 
 
 Enfin, pour rappel, scanner.next() renvoie le prochain mot, 
