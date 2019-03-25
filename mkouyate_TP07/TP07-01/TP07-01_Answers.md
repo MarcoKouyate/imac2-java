@@ -3,7 +3,9 @@ IMAC 2 - 2019 / 2020
 https://igm.univ-mlv.fr/ens/IR/IMAC2/2018-2019/Java/td07.php**
 
 
-#JAVA - TP 07 - EXERCICE 01
+# JAVA - TP 07 
+
+## EXERCICE 01
 
 Le but de cet exercice est de construire un parseur d'expressions 
 arithmétiques simples. Ces expressions sont représentées sous 
@@ -16,13 +18,13 @@ des valeurs soit des opérations (avec un membre gauche et un membre droit).
 
 
 
-## Pourquoi le constructeur qui prend 4 arguments est déclaré private ?
+### Pourquoi le constructeur qui prend 4 arguments est déclaré private ?
 
 
 
-Quel est le problème du constructeur OpOrValue(int, OpOrValue, OpOrValue) ?
+### Quel est le problème du constructeur OpOrValue(int, OpOrValue, OpOrValue) ?
 
-Corriger le problème.
+### Corriger le problème.
 
 Écrire une méthode parse qui prend un Scanner en entrée et crée l'arbre 
 d'expression correspondant sachant que l'arbre sera donné au scanner 
