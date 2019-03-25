@@ -1,4 +1,5 @@
 //package fr.umlv.calc;
+import java.util.Scanner;
 
 public class OpOrValue {
   public static final int OP_NONE = 0;
@@ -35,11 +36,42 @@ public class OpOrValue {
     }
   }
   
+  static public OpOrValue parse (Scanner scanner) {
+    if (!scanner.hasNext()){ 
+      //throw IllegalArgumentException("Le scanner ne devrait pas être vide !");
+      System.out.println("Money");
+    }
+    return recursiveParse(scanner);
+  }
+
+  static private OpOrValue recursiveParse(Scanner scanner){
+    var token = scanner.next();
+    try {
+      int i = Integer.parseInt(token);
+      return new OpOrValue(i);
+    } catch (NumberFormatException e) {
+      var left = recursiveParse(scanner);
+      var right = recursiveParse(scanner);
+
+      switch (token){
+        case "+" : return new OpOrValue(OP_ADD, left, right);
+        case "-" : return new OpOrValue(OP_SUB, left, right);
+        default : throw new IllegalArgumentException("Ce n'est pas un operateur valide !");
+      }
+    }
+  }
+  
   public static void main(String[] args) {
     OpOrValue expression = new OpOrValue(OP_ADD,
         new OpOrValue(2),
         new OpOrValue(3)
         );
     System.out.println(expression.eval());
+
+    String input = "- + 4 5 2";
+    Scanner operation = new Scanner(input);
+    OpOrValue result = parse(operation);
+
+    System.out.println(result.eval());
   }
 }

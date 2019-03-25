@@ -30,14 +30,13 @@ Il faut s'assurer que les paramètres indiquées rentrent bien dans l'ensemble d
 ### Écrire une méthode parse qui prend un Scanner en entrée et crée l'arbre d'expression correspondant sachant que l'arbre sera donné au scanner en utilisant la notation polonaise inverse. 
 __Par exemple, au lieu de 2 + 3 - 4, la notation polonaise inverse est - + 2 3 4.__ 
 
-__Indication: la méthode parse est naturellement récursive: si l’expression contient encore des symboles (et qu'elle est bien formée) 
-__alors:
+__Indication: la méthode parse est naturellement récursive: si l’expression contient encore des symboles (et qu'elle est bien formée) alors:__
 - soit le prochain symbole est un entier et il suffit d'en faire une feuille de l’arbre d'expression 
 - soit le prochain symbole est un opérateur et il faut appeler parse() 2 fois pour obtenir le fils gauche et le fils droit et les combiner avec l'opérateur pour faire une nouvelle expression.__ 
+<DONE>
 
 
-### Enfin, pour rappel, scanner.next() renvoie le prochain mot, Integer.parseInt() permet de savoir si c'est un entier et il est 
-possible de faire un switch sur des Strings en Java. Déplacer le main dans une nouvelle classe Main dans le package 
+### Enfin, pour rappel, scanner.next() renvoie le prochain mot, Integer.parseInt() permet de savoir si c'est un entier et il est possible de faire un switch sur des Strings en Java. Déplacer le main dans une nouvelle classe Main dans le package 
 fr.umlv.calc.main.
 
 
