@@ -14,9 +14,20 @@ Nous allons dans un premier temps créer une liste chaînée d'entiers.
 
 1. Créer une classe Link dans le paquetage fr.umlv.data correspondant à un maillon de la liste chaînée stockant des entiers. 
 En aucun cas, l'utilisateur de la classe ne devra lui-même manipuler des maillons. 
-Quelle doit être la visibilité de la classe fr.umlv.data.Link ainsi que la visibilité de ses champs ? 
+Quelle doit être la visibilité de la classe fr.umlv.data.Link ainsi que la visibilité de ses champs ?
+```
+Nous utilisons un package pour isoler la classe et ses outils de l'utilisateur. 
+L'utilisateur va pouvoir utiliser notre API sans fouiller dedans et faire n'importe quoi. 
+Pas besoin de getter ni de setter puisqu'il s'agit de notre propre outil
+```
 Écrire un main de test dans cette classe créant deux maillons contenant les valeurs 13 et 144.
+
 2. Quelle est la commande pour exécuter le main de la classe fr.umlv.data.Link à partir d'un terminal (pas dans Eclipse) ?
+```
+depuis le dossier de destination :
+java fr.umlv.data.Link
+```
+
 3. Créer une classe fr.umlv.data.LinkedLink qui permettra de manipuler une liste chainée par son premier maillon.
 	- add(int value) qui ajoute un élément en tête de la liste.
 	- toString() qui affiche le contenu de la liste.
