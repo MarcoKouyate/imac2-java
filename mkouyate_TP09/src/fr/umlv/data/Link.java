@@ -5,13 +5,13 @@ class Link {
 	int value;
 	Link next;
 	
-	private Link(int value, Link next) {
+	public Link(int value, Link next) {
 		this.value = value;
 		this.next = next;
 	}
-
-	public static void main(String[] args) {
-		System.out.println("Hellossu world !");
+	
+	@Override
+	public String toString() {
+		return Integer.toString(value);
 	}
-
 }

@@ -25,7 +25,7 @@ Pas besoin de getter ni de setter puisqu'il s'agit de notre propre outil
 2. Quelle est la commande pour exécuter le main de la classe fr.umlv.data.Link à partir d'un terminal (pas dans Eclipse) ?
 ```
 depuis le dossier de destination :
-java fr.umlv.data.Link
+> java fr.umlv.data.Link
 ```
 
 3. Créer une classe fr.umlv.data.LinkedLink qui permettra de manipuler une liste chainée par son premier maillon.
