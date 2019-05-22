@@ -12,6 +12,14 @@ public class LinkedLink {
 		link = new Link(value, link);
 	}
 	
+	public int getIndex (int index) {
+		Link current = link;
+		for (int i= 0; i < index; i++) {
+			current= current.next;
+		}
+		return current.value;
+	}
+	
 	@Override
 	public String toString() {
 		String str = "";
