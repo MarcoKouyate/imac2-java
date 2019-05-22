@@ -1,21 +1,21 @@
 package fr.umlv.data;
 
-public class LinkedLink {
+public class LinkedLink<T> {
 	
-	Link link;
+	Link<T> link;
 	
-	public LinkedLink (int value) {
+	public LinkedLink (T value) {
 		add(value);
 	}
 	
-	public void add(int value) {
-		link = new Link(value, link);
+	public void add(T value) {
+		link = new Link<T>(value, link);
 	}
 	
-	public int getIndex (int index) {
-		Link current = link;
+	public T getIndex (int index) {
+		Link<T> current = link;
 		for (int i= 0; i < index; i++) {
-			current= current.next;
+			current = current.next;
 		}
 		return current.value;
 	}
@@ -23,7 +23,7 @@ public class LinkedLink {
 	@Override
 	public String toString() {
 		String str = "";
-		Link currentLink = link;
+		Link<T> currentLink = link;
 		
 		while (currentLink.next != null) {
 			str = str + currentLink + " ";

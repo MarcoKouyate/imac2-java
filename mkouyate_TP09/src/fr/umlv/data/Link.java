@@ -1,17 +1,18 @@
 package fr.umlv.data;
 
-class Link {
+
+class Link <T> {
 	
-	int value;
-	Link next;
+	Link<T> next;
+	T value;
 	
-	public Link(int value, Link next) {
+	public Link(T value, Link<T> next) {
 		this.value = value;
 		this.next = next;
 	}
 	
 	@Override
 	public String toString() {
-		return Integer.toString(value);
+		return value.toString();
 	}
 }
