@@ -10,6 +10,7 @@ public class Main {
 		System.out.println("Hellossu world !");
 		System.out.println(chaine);
 		System.out.println("Current value 2 : " + chaine.getIndex(1).length());
+		System.out.println("Contains John ? " + chaine.contains("Joh"));
 	}
 
 }

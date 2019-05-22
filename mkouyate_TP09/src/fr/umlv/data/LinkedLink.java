@@ -20,6 +20,21 @@ public class LinkedLink<T> {
 		return current.value;
 	}
 	
+	public boolean contains(Object o) {
+		Link<T> currentLink = link;
+		
+		while (true) {
+			if (o.equals(link.value)) {
+				return true;
+			}
+			
+			if (currentLink.next==null) {
+				return false;
+			}
+			currentLink = currentLink.next;
+		}
+	}
+	
 	@Override
 	public String toString() {
 		String str = "";
